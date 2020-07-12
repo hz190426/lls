@@ -20,9 +20,13 @@
           class="button--grey"
         >
           GitHub!!{{status.str}}
+
+         
         </a>
       </div>
-      <statusbox :maxstatus=50 param="str"></statusbox>
+      <levelbox label="レベル"></levelbox>
+      <classbox label="クラス"></classbox>
+      <statusbox param="str" label="STR"></statusbox>
     </div>
   </div>
 </template>
@@ -30,13 +34,21 @@
 <script>
 import { mapMutations } from 'vuex'
 import statusbox from '~/components/statusbox.vue' // コンポーネント読み込み
+import classbox from '~/components/classbox.vue' // コンポーネント読み込み
+import levelbox from '~/components/levelbox.vue' // コンポーネント読み込み
+
 export default {
   components: {
-    statusbox // コンポーネントの登録
+    statusbox, // コンポーネントの登録
+    classbox,
+    levelbox
   },
   computed: {
     status () {
       return this.$store.state.character.status
+    },
+    common(){
+      return this.$store.state.json.json
     }
   },
   methods:{
