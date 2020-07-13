@@ -25,6 +25,7 @@
         </a>
       </div>
       <levelbox label="レベル"></levelbox>
+      <bonusbox label="ボーナスポイント"></bonusbox>
       <classbox label="クラス"></classbox>
       <statusbox param="str" label="STR"></statusbox>
     </div>
@@ -36,12 +37,13 @@ import { mapMutations } from 'vuex'
 import statusbox from '~/components/statusbox.vue' // コンポーネント読み込み
 import classbox from '~/components/classbox.vue' // コンポーネント読み込み
 import levelbox from '~/components/levelbox.vue' // コンポーネント読み込み
-
+import bonusbox from '~/components/bonusbox.vue' // コンポーネント読み込み
 export default {
   components: {
     statusbox, // コンポーネントの登録
     classbox,
-    levelbox
+    levelbox,
+    bonusbox
   },
   computed: {
     status () {

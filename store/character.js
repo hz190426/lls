@@ -64,10 +64,6 @@ export const state = () => ({
     //クラスを変更する
     changeclass(state,value){
       state.class = value;
-
-      //state.class = args.classstype
-      //let classdata = this.$store.state.json.json.classdata[value];
-      //state.status.base.str = classdata.str;
     },
     changeclassData(state,classdata){
       state.status.base.str = classdata.str
@@ -80,6 +76,15 @@ export const state = () => ({
     //レベルを変更する
     changelevel(state,value){
       state.level = value;
+      state.point.maxbonus = state.level - 50
+      let bp = state.level - 50
+      bp -=  state.status.add.str
+      bp -=  state.status.add.dex
+      bp -=  state.status.add.int
+      bp -=  state.status.add.con
+      bp -=  state.status.add.wis
+      bp -=  state.status.add.cha
+      state.point.bonus = bp
     }
   }
 
